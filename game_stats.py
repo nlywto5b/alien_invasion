@@ -13,11 +13,11 @@ class GameStats:
         self.game_active = False
         # 最高分
         if ai_settings.difficulty == 1:
-            self.history_high_score = ai_settings.info['easy_score']
+            self.history_high_score = ai_settings.score['easy_score']
         elif ai_settings.difficulty == 2:
-            self.history_high_score = ai_settings.info['normal_score']
+            self.history_high_score = ai_settings.score['normal_score']
         elif ai_settings.difficulty == 3:
-            self.history_high_score = ai_settings.info['difficult_score']
+            self.history_high_score = ai_settings.score['difficult_score']
         self.high_score = self.history_high_score
         # 帧率
         self.fps = 0

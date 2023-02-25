@@ -11,9 +11,9 @@ try:
     from scoreboard import Scoreboard
     from settings import Settings
     from ship import Ship
-    from time import time
     from fps import Fps
     from timer import Timer
+    from time import time
 except ImportError:  # 检测库/文件是否成功调用, 否则显示提示信息
     print('''请确认文件是否缺少! 
 请确认pygame是否安装! ''')
@@ -49,15 +49,15 @@ else:
         # 创建外星人群
         gf.create_fleet(ai_settings, screen, ship, aliens)
         # 初始化时间
-        t1 = time()
+        flut = gf.time()  # fps last update time
         # 开始游戏主循环
         while True:
-            # 增加帧率
-            stats.fps += 1
-            if gf.check_fps_time(t1):
-                t1 = time()
+            # 更新帧率
+            if gf.check_fps_time(flut):
+                flut = time()
                 # 更新帧率
-                fps_info.update_fps(stats, t1)
+                fps_info.update_fps(stats, flut)
+
             # 响应按键和鼠标
             gf.check_events(ai_settings, screen, stats, sb, play_button, ship,
                             aliens, bullets, timer_info)

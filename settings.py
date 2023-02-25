@@ -1,10 +1,8 @@
 # -*- coding: UTF-8 -*-
 import pygame
-import pickle
-import json
 import tkinter as tk
 from tkinter import messagebox
-from sys import exit
+from game_function import get_score
 
 
 class Settings:
@@ -17,29 +15,7 @@ class Settings:
         self.screen_height = height
         self.bg_color = 230, 230, 230
         # 难度设置&信息
-        try:
-            with open('score.pickle', 'rb') as f:
-                temp = pickle.load(f)
-        except FileNotFoundError:
-            with open('score.pickle', 'wb') as f:
-                pickle.dump({'easy_score': 0,'normal_score': 0,'difficult_score': 0}, f)
-            with open('backup.pickle', 'wb') as f:
-                pickle.dump({'easy_score': 0,'normal_score': 0,'difficult_score': 0}, f)
-        except:
-            try:
-                with open('backup.pickle', 'rb') as bk:
-                    temp = pickle.load(bk)
-                with open('score.pickle', 'wb') as f:
-                    pickle.dump(temp, f)
-            except :
-                tk.messagebox.showerror('出现错误', '分数信息存储文件和备份均已损坏, \
-因此, 你以前的记录全部丢失. 确认后将自动退出程序, 重新启动程序即可正常')
-                with open('score.pickle', 'wb') as f:
-                    pickle.dump({'easy_score': 0,'normal_score': 0,'difficult_score': 0}, f)
-                with open('backup.pickle', 'wb') as f:
-                    pickle.dump({'easy_score': 0,'normal_score': 0,'difficult_score': 0}, f)
-                exit()
-        self.info = temp
+        self.score = get_score()
         self.difficulty = difficulty  # 1:简单, 2:普通, 3:困难
         # 飞船设置
         if self.difficulty == 1:

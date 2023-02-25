@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 import pygame.font
-import game_function as gf
 from time import time
 
 

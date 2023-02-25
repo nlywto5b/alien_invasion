@@ -9,7 +9,7 @@ except ImportError:  # 检测库/文件是否成功调用, 否则显示提示信
 请确认Tcl/TK是否在你的电脑上安装! ''')
 else:
 
-    def run():
+    def run_game():
         '''运行游戏'''
         global width, height
         # 获取游戏窗口大小
@@ -100,7 +100,7 @@ else:
                                 width=20,
                                 height=2,
                                 font=('Minecraft AE Pixel', 22),
-                                command=run)
+                                command=run_game)
     start_button.place(x=300, y=350, anchor='s')
     # 主循环
     window.mainloop()
