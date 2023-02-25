@@ -20,7 +20,12 @@ class Settings:
         try:
             with open('score.pickle', 'rb') as f:
                 temp = pickle.load(f)
-        except :
+        except FileNotFoundError:
+            with open('score.pickle', 'wb') as f:
+                pickle.dump({'easy_score': 0,'normal_score': 0,'difficult_score': 0}, f)
+            with open('backup.pickle', 'wb') as f:
+                pickle.dump({'easy_score': 0,'normal_score': 0,'difficult_score': 0}, f)
+        except:
             try:
                 with open('backup.pickle', 'rb') as bk:
                     temp = pickle.load(bk)
