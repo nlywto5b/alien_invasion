@@ -35,6 +35,10 @@ ESC退出
   images/alien.bmp - 外星人图片
   
   images/welcome.gif - 启动器的欢迎图片(虽然是gif文件，但由于tkinter的问题，无法动起来)
+  
+  字体类型与大小在settings.py中设置，将来可能会在启动器页面自带设置(#)
+  
+  51 62 65 68
 
 在DIY前，记得备份，以免删除重要文件！
 
