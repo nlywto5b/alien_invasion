@@ -2,7 +2,7 @@
 name: Bug反馈
 about: 提供Bug反馈让开发者修复
 title: '[BUG] 标题'
-labels: BUG, 新
+labels: BUG, 新, β
 assignees: ''
 
 ---
