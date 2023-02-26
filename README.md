@@ -36,7 +36,10 @@ ESC退出
   
   images/welcome.gif - 启动器的欢迎图片(虽然是gif文件，但由于tkinter的问题，无法动起来)
   
-  字体类型与大小在settings.py中设置，将来可能会在启动器页面自带设置(#)
+  字体类型与大小在settings.py中设置，将来可能会在启动器页面自带设置(#5)。用文本文档打开setting.py
+  
+  '''python
+'''
   
   51 62 65 68
 
