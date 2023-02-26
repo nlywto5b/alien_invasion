@@ -30,17 +30,25 @@ ESC退出
 
 本游戏可以DIY，只要你替换掉对应文件即可
 
-  images/ship.bmp - 飞船图片
+  - images/ship.bmp - 飞船图片
   
-  images/alien.bmp - 外星人图片
+  - images/alien.bmp - 外星人图片
   
-  images/welcome.gif - 启动器的欢迎图片(虽然是gif文件，但由于tkinter的问题，无法动起来)
+  - images/welcome.gif - 启动器的欢迎图片(虽然是gif文件，但由于tkinter的问题，无法动起来)
   
-  字体类型与大小在settings.py中设置，将来可能会在启动器页面自带设置(#5)。用文本文档打开setting.py
+  字体类型与大小在settings.py中设置，**此项不建议更改**， 将来可能会在启动器页面自带设置([#5](https://github.com/nlywto5b/alien_invasion/issues/5))。用文本文档打开setting.py,
+在第51，62，65，68行
+```python
+self.button_font = pygame.font.SysFont('Kaiti', 45)
+self.scorebaord_font = pygame.font.SysFont('Kaiti', 30)
+self.fps_font = pygame.font.SysFont('Kaiti', 30)
+self.timer_font = pygame.font.SysFont('Kaiti', 30)
+```
+  
+  四行分别对应开始游戏按钮、计分板、帧数、计时器。`'Kaiti'` 代表楷体，可以替换为字体文件的地址，`45` 代表字体大小。
   
     
   
-  51 62 65 68
 
 在DIY前，**记得备份**，以免删除重要文件！
 
